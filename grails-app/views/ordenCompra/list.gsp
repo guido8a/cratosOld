@@ -18,19 +18,27 @@
 </head>
 
 <body>
-<div class="ui-widget-content ui-corner-all cont">
-    <div class="ui-widget-header ui-corner-all titulo">
-        Lista de Ordenes de Compra
-        <div class="fright">
-            <g:link action="create" class="btnNew miniButton">Nueva</g:link>
+%{--<div class="ui-widget-content ui-corner-all cont">--}%
+    %{--<div class="ui-widget-header ui-corner-all titulo">--}%
+    %{--Lista de Ordenes de Compra--}%
+    %{--<div class="fright">--}%
+    %{--<g:link action="create" class="btnNew miniButton">Nueva</g:link>--}%
+    %{--</div>--}%
+    %{--</div>--}%
+
+    <div class="btn-toolbar toolbar">
+        <div class="btn-group">
+            <g:link action="create" class="btn btn-azul"><i class="fa fa-save"></i> Nuevo</g:link>
         </div>
     </div>
+
 
     <div id="list-ordenCompra" class="content scaffold-list" role="main">
         <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
         </g:if>
-        <table id="tbl-ordenCompra">
+    %{--<table id="tbl-ordenCompra">--}%
+        <table id="tbl-ordenCompra" class="table table-bordered table-hover table-condensed">
             <thead>
             <tr>
 
@@ -77,13 +85,13 @@
                         <td>Registrado</td>
                     </g:if>
                     <g:else>
-                    <g:if test="${ordenCompraInstance.estado == 'C'}">
-                        <td>Comprado</td>
+                        <g:if test="${ordenCompraInstance.estado == 'C'}">
+                            <td>Comprado</td>
 
-                    </g:if>
-                    <g:else>
-                        <td>No Registrado</td>
-                    </g:else>
+                        </g:if>
+                        <g:else>
+                            <td>No Registrado</td>
+                        </g:else>
                     </g:else>
                     <td>${fieldValue(bean: ordenCompraInstance, field: "observaciones")}</td>
 
@@ -97,19 +105,19 @@
             </div>
         </g:if>
     </div>
-</div>
+%{--</div>--}%
 
-<ul id="menu-ordenCompra" class="contextMenu">
-    <li class="show">
-        <a href="#show">Ver</a>
-    </li>
-    <li class="edit">
-        <a href="#edit">Editar</a>
-    </li>
-    <li class="delete">
-        <a href="#delete">Eliminar</a>
-    </li>
-</ul>
+%{--<ul id="menu-ordenCompra" class="contextMenu">--}%
+%{--<li class="show">--}%
+%{--<a href="#show">Ver</a>--}%
+%{--</li>--}%
+%{--<li class="edit">--}%
+%{--<a href="#edit">Editar</a>--}%
+%{--</li>--}%
+%{--<li class="delete">--}%
+%{--<a href="#delete">Eliminar</a>--}%
+%{--</li>--}%
+%{--</ul>--}%
 
 <div id="dlg-ordenCompra"></div>
 
@@ -163,130 +171,110 @@
     }
 
     $(function () {
-        $("#dlgLoad").dialog({
-            modal:true,
-            autoOpen:false,
-            closeOnEscape:false,
-            draggable:false,
-            resizable:false,
-            zIndex:9000,
-            open:function (event, ui) {
-                $(event.target).parent().find(".ui-dialog-titlebar-close").remove();
-            }
-        });
+//        $("#dlgLoad").dialog({
+//            modal:true,
+//            autoOpen:false,
+//            closeOnEscape:false,
+//            draggable:false,
+//            resizable:false,
+//            zIndex:9000,
+//            open:function (event, ui) {
+//                $(event.target).parent().find(".ui-dialog-titlebar-close").remove();
+//            }
+//        });
 
-        $("#dlg-ordenCompra").dialog({
-            modal:true,
-            autoOpen:false,
-            width:420,
-            zIndex:1000,
-            position:["center", 10]
-        });
+//        $("#dlg-ordenCompra").dialog({
+//            modal:true,
+//            autoOpen:false,
+//            width:420,
+//            zIndex:1000,
+//            position:["center", 10]
+//        });
+//
+//        $("th").hover(function () {
+//            $(this).addClass("hover");
+//            var i = $(this).index();
+//            $("#tb-ordenCompra").find("tr").each(function () {
+//                $(this).children().eq(i).addClass("hover");
+//            });
+//        }, function () {
+//            $(".hover").removeClass("hover");
+//        });
+//
+//        $("#tb-ordenCompra").find("tr").hover(function () {
+//            $(this).addClass("hover");
+//        }, function () {
+//            $(".hover").removeClass("hover");
+//        });
+//
+//        $(".btnNew").button({
+//            icons:{
+//                primary:"ui-icon-document"
+//            }
+//        });
 
-        $("th").hover(function () {
-            $(this).addClass("hover");
-            var i = $(this).index();
-            $("#tb-ordenCompra").find("tr").each(function () {
-                $(this).children().eq(i).addClass("hover");
-            });
-        }, function () {
-            $(".hover").removeClass("hover");
-        });
-
-        $("#tb-ordenCompra").find("tr").hover(function () {
-            $(this).addClass("hover");
-        }, function () {
-            $(".hover").removeClass("hover");
-        });
-
-        $(".btnNew").button({
-            icons:{
-                primary:"ui-icon-document"
-            }
-        });
-        /*.click(function () {
-         var id = $(this).attr("id");
-         var url = $(this).attr("href");
-         var title = "Crear OrdenCompra";
-         var buttons = {
-         "Guardar"  : function () {
-         submitForm();
-         },
-         "Cancelar" : function () {
-         $("#dlg-ordenCompra").dialog("close");
-         }
-         };
-         openDlg(url, id, "", true, title, buttons);
-         return false;
-         });*/
-
-        $("#tb-ordenCompra").find("tr").contextMenu({
-                    menu:"menu-ordenCompra"
-                },
-                function (action, el, pos) {
-                    $("#dlg-ordenCompra").html("");
+        %{--$("#tb-ordenCompra").find("tr").contextMenu({--}%
+                %{--menu:"menu-ordenCompra"--}%
+            %{--},--}%
+            %{--function (action, el, pos) {--}%
+                %{--$("#dlg-ordenCompra").html("");--}%
 
 
-                    var id = $(el).attr("id");
-                    var estado = $(el).data("estado");
-                    var title, buttons, url, cont;
-                    switch (action) {
-                        case "edit":
+                %{--var id = $(el).attr("id");--}%
+                %{--var estado = $(el).data("estado");--}%
+                %{--var title, buttons, url, cont;--}%
+                %{--switch (action) {--}%
+                    %{--case "edit":--}%
 
-                            if (estado == 'R') {
+                        %{--if (estado == 'R') {--}%
 
-                                url = "${createLink(action: 'show')}/" + id;
-                                location.href = url;
+                            %{--url = "${createLink(action: 'show')}/" + id;--}%
+                            %{--location.href = url;--}%
 
-                            }
-                            else {
-                                console.log("create");
-                                url = "${createLink(action:'create')}/" + id;
-                                location.href = url;
-                            }
-                            break;
+                        %{--}--}%
+                        %{--else {--}%
+                            %{--console.log("create");--}%
+                            %{--url = "${createLink(action:'create')}/" + id;--}%
+                            %{--location.href = url;--}%
+                        %{--}--}%
+                        %{--break;--}%
 
 
-                        case "show":
-//                                    title = "Ver OrdenCompra";
-//                                    buttons = {
-//                                        "Aceptar" : function () {
-//                                            $("#dlg-ordenCompra").dialog("close");
-//                                        }
-//                                    };
-                            url = "${createLink(action:'show')}/" + id;
-                            location.href = url;
-                            break;
-                        case "delete":
-                            title = "Eliminar OrdenCompra";
-                            buttons = {
-                                "Aceptar":function () {
-                                    $("#dlgLoad").dialog("open");
-                                    $.ajax({
-                                        type:"POST",
-                                        url:"${createLink(action:'delete')}",
-                                        data:{
-                                            id:id
-                                        },
-                                        success:function (msg) {
-                                            location.reload(true);
-                                        }
-                                    });
-                                },
-                                "Cancelar":function () {
-                                    $("#dlg-ordenCompra").dialog("close");
-                                }
-                            };
-                            cont = "<span style='font-size: 16px;'> Est&aacute; seguro de querer eliminar este OrdenCompra?";
-                            cont += "<br/>Esta acci&oacute;n es definitiva.</span>"
-                            $("#dlg-ordenCompra").dialog("option", "width", 360);
-                            break;
-                    }
-                    var open = action != "show" && action != "edit";
-                    if (open) {
-                        openDlg(url, id, cont, action != "delete", title, buttons);
-                    }
-                });
+                    %{--case "show":--}%
+
+                        %{--url = "${createLink(action:'show')}/" + id;--}%
+                        %{--location.href = url;--}%
+                        %{--break;--}%
+                    %{--case "delete":--}%
+                        %{--title = "Eliminar OrdenCompra";--}%
+                        %{--buttons = {--}%
+                            %{--"Aceptar":function () {--}%
+                                %{--$("#dlgLoad").dialog("open");--}%
+                                %{--$.ajax({--}%
+                                    %{--type:"POST",--}%
+                                    %{--url:"${createLink(action:'delete')}",--}%
+                                    %{--data:{--}%
+                                        %{--id:id--}%
+                                    %{--},--}%
+                                    %{--success:function (msg) {--}%
+                                        %{--location.reload(true);--}%
+                                    %{--}--}%
+                                %{--});--}%
+                            %{--},--}%
+                            %{--"Cancelar":function () {--}%
+                                %{--$("#dlg-ordenCompra").dialog("close");--}%
+                            %{--}--}%
+                        %{--};--}%
+                        %{--cont = "<span style='font-size: 16px;'> Est&aacute; seguro de querer eliminar este OrdenCompra?";--}%
+                        %{--cont += "<br/>Esta acci&oacute;n es definitiva.</span>"--}%
+                        %{--$("#dlg-ordenCompra").dialog("option", "width", 360);--}%
+                        %{--break;--}%
+                %{--}--}%
+                %{--var open = action != "show" && action != "edit";--}%
+                %{--if (open) {--}%
+                    %{--openDlg(url, id, cont, action != "delete", title, buttons);--}%
+                %{--}--}%
+            %{--});--}%
     });
 </script>
 </body>

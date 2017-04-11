@@ -8,14 +8,20 @@
     </head>
 
     <body>
-        <a href="#list-factura" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
 
-        <div id="list-factura" class="content scaffold-list" role="main">
-            <div class="ui-widget-header ui-corner-all nav navegacion">
-                <ul style="margin-bottom:0;">
-                    <li><g:link class="create linkButton" action="create">Crear Factura</g:link></li>
-                </ul>
-            </div>
+        %{--<div id="list-factura" class="content scaffold-list" role="main">--}%
+            %{--<div class="ui-widget-header ui-corner-all nav navegacion">--}%
+                %{--<ul style="margin-bottom:0;">--}%
+                    %{--<li><g:link class="create linkButton" action="create">Crear Factura</g:link></li>--}%
+                %{--</ul>--}%
+            %{--</div>--}%
+
+
+    <div class="btn-toolbar toolbar">
+        <div class="btn-group">
+            <g:link action="create" class="btn btn-azul"><i class="fa fa-save"></i> Crear Factura</g:link>
+        </div>
+    </div>
 
             <div class="contenedor">
                 <h1>Lista de Facturas</h1>
@@ -24,7 +30,7 @@
                     </div>
                 </g:if>
 
-                <table>
+                <table class="table table-bordered table-hover table-condensed">
                     <thead>
                         <tr>
                             <th width="15">#</th>
@@ -56,10 +62,10 @@
                 </table>
             </div>
 
-            <div class="ui-widget-header pagination" style="padding: 5px;">
-                <g:paginate total="${facturaInstanceTotal}" prev="Anterior" next="Siguiente" params="${params}"/>
-            </div>
+            %{--<div class="ui-widget-header pagination" style="padding: 5px;">--}%
+                %{--<g:paginate total="${facturaInstanceTotal}" prev="Anterior" next="Siguiente" params="${params}"/>--}%
+            %{--</div>--}%
 
-        </div>
+        %{--</div>--}%
     </body>
 </html>

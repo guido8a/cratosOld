@@ -104,7 +104,7 @@
                             <div class="span-3">Número:</div>
 
                             <div class="span-10">
-                                <g:textField name="numero" value="${ordenCompraInstance.numero}" style="width: 100px" class="required span-6 ui-widget-content ui-corner-all"/>
+                                <g:textField name="numero" value="${ordenCompraInstance?.numero}" style="width: 100px" class="required span-6 ui-widget-content ui-corner-all"/>
                             </div>
 
                         </div>
@@ -321,8 +321,8 @@
             //datepicker
 
             $(function () {
-                $("#datepicker").datepicker({ minDate : new Date(${periodo.fechaInicio.format("yyyy")}, ${periodo.fechaInicio.format("MM")}, ${periodo.fechaInicio.format("dd")}),
-                    maxDate                           : new Date(${periodo.fechaFin.format("yyyy")}, ${periodo.fechaFin.format("MM")}, ${periodo.fechaFin.format("dd")})
+                $("#datepicker").datepicker({ minDate : new Date(${periodo?.fechaInicio?.format("yyyy")}, ${periodo?.fechaInicio?.format("MM")}, ${periodo?.fechaInicio?.format("dd")}),
+                    maxDate                           : new Date(${periodo?.fechaFin?.format("yyyy")}, ${periodo?.fechaFin?.format("MM")}, ${periodo?.fechaFin?.format("dd")})
 
                 });
             });

@@ -15,7 +15,7 @@
     }
     </style>
 </head>
-<body>  
+<body>
 <div class="container entero ui-corner-all">
     <fieldset style="margin-left: 25px;width: 1080px;float: left" class="ui-corner-all">
         <legend>Transacciones anuladas</legend>
@@ -48,11 +48,11 @@
                 </g:each>
             </g:if>
             <g:else>
-                <tr>
-                    <td>
-                        NO EXISTE NINGÚN PROCESO ANULADO
-                    </td>
+
+                <tr class="danger text-center">
+                    <td colspan="6">No se encontraron procesos anulados</td>
                 </tr>
+
             </g:else>
             </tbody>
         </table>

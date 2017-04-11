@@ -154,3 +154,41 @@
     vertical-align   : middle;
 }
 
+/*etiqueta*/
+.etiqueta-container{
+    position: relative;
+    border: 1px solid white;
+}
+.etiqueta-svt{
+    width: 96%;
+    height: 40px;
+    line-height: 40px;
+    color:#ffffff;
+    background:  #0088CC;
+    margin-top: 10px !important;
+    margin-bottom: 10px;
+    padding-left: 1%;
+    font-weight: bold;
+    font-family : 'open sans condensed';
+    font-size: 18px;
+}
+.etiqueta-svt:before, .etiqueta-svt:after{
+    position: absolute;
+    content: "";
+    width: 0px;
+    height: 0px;
+}
+.etiqueta-svt:before{
+    width: 30px;
+    left: -29px;
+    top: 10px;
+    height: 40px;
+    background:#0088CC  ;
+}
+.etiqueta-svt:after{
+    left:-29;
+    top: 50;
+    border-width:  10px 0px 0px 29px;
+    border-style: solid;
+    border-color:#666 transparent ;
+}
