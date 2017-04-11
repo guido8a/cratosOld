@@ -90,6 +90,7 @@
             </g:if>
         </g:if>
         <g:link class="btn btn-default" action="index">
+            <i class="fa fa-times"></i>
             Cancelar
         </g:link>
         <g:if test="${proceso}">
@@ -293,7 +294,7 @@
                     <div class="col-xs-2 negrilla" style="width: 140px">
                         Tipo de pago:
                     </div>
-                    <div class="col-xs-4 negrilla" style="margin-left: -20px" >
+                    <div class="col-xs-6 negrilla" style="margin-left: -20px" >
                         <g:select name="tipoPago.id" id="comboFP" class=" form-control" from="${cratos.TipoPago.list()}" label="Tipo de pago: " optionKey="id"  optionValue="descripcion" />
                     </div>
                     <div class="col-xs-1 negrilla" style="width: 140px">
@@ -305,7 +306,7 @@
                         </g:if>
                     </div>
                 </div>
-                <div class="ui-corner-all" style="height: 170px;border: 1px solid #000000;width: 80%;margin-left: 5px;margin-top: 20px" id="detalle-fp">
+                <div class="ui-corner-all" style="height: 170px;border: 1px solid #000000;width: 100%;margin-left: 5px;margin-top: 20px" id="detalle-fp">
                     <g:each in="${fps}" var="f">
                         <div class="filaFP ui-corner-all fp-${f.tipoPago.id}" fp="${f.tipoPago.id}" >
                             <g:if test="${!registro}">
@@ -330,7 +331,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel-proveedor">Formas de pago</h4>
+                <h4 class="modal-title" id="myModalLabel-proveedor">Proveedor</h4>
             </div>
             <div class="modal-body">
                 <div class="row">
@@ -340,7 +341,7 @@
                             <option value="2">Nombre</option>
                         </select>
                     </div>
-                    <div class="col-xs-4 negrilla" style="margin-left: -20px" >
+                    <div class="col-xs-5 negrilla" style="margin-left: -20px" >
                         <input type="text" id="parametro" class="form-control" style="margin-right: 10px;">
                     </div>
                     <div class="col-xs-1 negrilla" style="width: 140px">
@@ -350,7 +351,8 @@
                         </a>
                     </div>
                 </div>
-                <div class="ui-corner-all" style="height: 400px;border: 1px solid #000000;width: 95%;margin-left: 0px;margin-top: 20px;overflow-y: auto" id="resultados"></div>
+
+                <div class="ui-corner-all" style="height: 400px;border: 1px solid #000000; width: 100%;margin-left: 0px;margin-top: 20px;overflow-y: auto" id="resultados"></div>
 
             </div>
             <div class="modal-footer">

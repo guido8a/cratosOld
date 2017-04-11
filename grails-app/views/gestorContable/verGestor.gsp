@@ -57,8 +57,9 @@
     <p class="css-vertical-text">Movimientos</p>
     <div class="linea"></div>
     <g:if test="${cuentas?.size() > 0}">
-        <div style="margin-bottom: 30px;width: 850px">
-            <table class="table table-bordered table-striped">
+        <div style="margin-bottom: 30px;width: 1080px">
+            %{--<table class="table table-bordered table-striped">--}%
+                <table class="table table-bordered table-hover table-condensed">
                 <thead>
                 <tr>
                     <th>&nbsp;</th>
@@ -66,7 +67,7 @@
                     <th colspan="3" style="text-align: center">Haber</th>
                 </tr>
                 <tr>
-                    <th>C&oacute;digo(nombre)</th>
+                    <th style="width: 350px">C&oacute;digo (nombre)</th>
                     <th>B. Imponible</th>
                     <th>Impuestos</th>
                     <th>Valor</th>

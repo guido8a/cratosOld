@@ -1,5 +1,6 @@
 <g:if test="${cuentas?.size()>0}">
-    <table class="table table-bordered">
+    %{--<table class="table table-bordered">--}%
+         <table class="table table-bordered table-hover table-condensed">
         <thead>
         <tr>
             <th>&nbsp;</th>
@@ -8,12 +9,10 @@
             <th>&nbsp;</th>
         </tr>
         <tr>
-            <th style="max-width: 250px;">C&oacute;digo(Comprobante)</th>
-
+            <th style="max-width: 250px;">C&oacute;digo (Comprobante)</th>
             <th>B. Imponible</th>
             <th>Impuestos</th>
             <th>Valor</th>
-
             <th>B. Imponible</th>
             <th>Impuestos</th>
             <th>Valor</th>

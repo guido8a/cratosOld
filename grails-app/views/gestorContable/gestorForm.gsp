@@ -127,35 +127,59 @@
         </div>
     </g:form>
 </div>
+
 <div class="vertical-container" style="margin-top: 25px;min-height: 200px">
     <p class="css-vertical-text">Movimientos</p>
     <div class="linea"></div>
     <g:render template="busquedaCuentas"/>
 </div>
-<div class="vertical-container" style="margin-top: 25px;min-height: 200px;margin-bottom: 30px">
+
+<div class="vertical-container" style="margin-top: 25px;min-height: 370px;margin-bottom: 30px">
     <p class="css-vertical-text">Agregar movimientos</p>
     <div class="linea"></div>
     <div class="row" style="margin-bottom: 10px">
         <div class="col-xs-3 negrilla">
-            Nombre:
-            <input type="text" class=" form-control label-shared" style="width: 150px" name="nombreBus" id="nombreBus"/>
-        </div>
-        <div class="col-xs-3 negrilla">
             C&oacute;digo:
             <input type="text" class=" form-control label-shared" style="width: 150px" name="codigo" id="codigoBus"/>
         </div>
+        <div class="col-xs-3 negrilla">
+            Nombre:
+            <input type="text" class=" form-control label-shared" style="width: 150px" name="nombreBus" id="nombreBus"/>
+        </div>
         <div class="col-xs-2 negrilla">
             <input type="hidden" name="movimientos" value="1"/>
-            %{--<input type="button" class="fg-button ui-state-default  ui-corner-all" name="buscar" id="buscar" value="Buscar"/>--}%
             <a href="#" class="btn btn-azul"  id="buscar">
                 <i class="fa fa-search"></i>
                 Buscar
             </a>
         </div>
     </div>
-    <div id="divPlanCuentas" style=" padding: 5px; margin-top: 2px; width: 700px;">
 
+
+    %{--<table class="table table-striped" width="400px">--}%
+        <table class="table table-bordered table-hover table-condensed">
+        <thead>
+        <tr>
+            <th style="width: 10px">C&oacute;digo</th>
+            <th style="width: 300px">Nombre</th>
+            <th style="width: 10px">Nivel</th>
+            <th style="width: 20px">Debe/Haber</th>
+            <th style="width: 30px">Agregar</th>
+        </tr>
+        </thead>
+    </table>
+
+    <div class="row-fluid"  style="width: 99.7%;height: 250px;overflow-y: auto;float: right;">
+        <div class="span12">
+            <div id="divPlanCuentas" style="width: 1050px; height: 250px;"></div>
+        </div>
     </div>
+
+
+    %{--<div id="divPlanCuentas" style=" padding: 5px; margin-top: 2px; width: 700px;">--}%
+
+    %{--</div>--}%
+
 </div>
 <script type="text/javascript">
     $(function () {

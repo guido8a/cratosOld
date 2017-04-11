@@ -1,13 +1,14 @@
-<table class="table table-striped" width="400px">
-    <thead>
-    <tr>
-        <th>C&oacute;digo</th>
-        <th>Nombre</th>
-        <th>Nivel</th>
-        <th>Debe/Haber</th>
-        <th>Agregar</th>
-    </tr>
-    </thead>
+%{--<table class="table table-striped" width="400px">--}%
+     <table class="table table-bordered table-hover table-condensed">
+    %{--<thead>--}%
+    %{--<tr>--}%
+        %{--<th>C&oacute;digo</th>--}%
+        %{--<th>Nombre</th>--}%
+        %{--<th>Nivel</th>--}%
+        %{--<th>Debe/Haber</th>--}%
+        %{--<th>Agregar</th>--}%
+    %{--</tr>--}%
+    %{--</thead>--}%
     <tbody>
     <g:if test="${planCuentas != null}">
         <g:each var="cuenta" in="${planCuentas}">

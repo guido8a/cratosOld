@@ -54,8 +54,32 @@
 
         </g:form>
     </div>
-    <div id="divLista" style="clear: both; padding: 5px; margin-top: 5px;max-height: 490px;overflow-y: auto">
+
+    <table class="table table-bordered table-hover table-condensed">
+        <thead>
+        <tr>
+            <th style="width: 260px">
+                Nombre
+            </th>
+            <th style="width: 260px">
+                Descripción
+            </th>
+            <th style="width: 50px">
+                Observaciones
+            </th>
+            <th style="width: 90px">Acciones</th>
+        </tr>
+        </thead>
+    </table>
+
+    <div class="row-fluid"  style="width: 99.7%;height: 250px;overflow-y: auto;float: right;">
+        <div class="span12">
+            <div id="divLista" style="width: 1120px; height: 450px;"></div>
+        </div>
     </div>
+
+    %{--<div id="divLista" style="clear: both; padding: 5px; margin-top: 5px;max-height: 490px;overflow-y: auto">--}%
+    %{--</div>--}%
 </div> <!-- container -->
 <script type="text/javascript">
 

@@ -17,11 +17,11 @@
 </head>
 <body>  
 <div class="container entero ui-corner-all">
-    <fieldset style="margin-left: 25px;width: 800px;float: left" class="ui-corner-all">
+    <fieldset style="margin-left: 25px;width: 1080px;float: left" class="ui-corner-all">
         <legend>Transacciones anuladas</legend>
         <b>Contabilidad:</b>
-        <g:select name="contabilidad"  class="form-control label-shared" id="contabilidad" style="width:450px" from="${cratos.Contabilidad.findAllByInstitucion(session.empresa,[sort:'id',order:'desc'])}" value="${contabilidad.id}" optionKey="id"></g:select>
-        <table style="margin-top: 10px;border: 1px solid black;padding:5px;" class="table table-striped">
+        <g:select name="contabilidad"  class="form-control label-shared" id="contabilidad" style="width:450px" from="${cratos.Contabilidad.findAllByInstitucion(session.empresa,[sort:'id',order:'desc'])}" value="${contabilidad.id}" optionKey="id"/>
+        <table  style="margin-top: 10px;border: 1px solid black;padding:5px;" class="table table-bordered table-hover table-condensed">
             <thead>
             <tr>
                 <th>Descripción</th>
@@ -31,20 +31,29 @@
             </tr>
             </thead>
             <tbody>
-            <g:each in="${procesos}" var="p">
+            <g:if test="${procesos}">
+                <g:each in="${procesos}" var="p">
+                    <tr>
+                        <td>${p.descripcion}</td>
+                        <td>${p.fecha.format("dd/MM/yyyy")}</td>
+                        <g:set var="comp" value="${cratos.Comprobante.findByProceso(p)}"/>
+                        <g:if test="${comp}">
+                            <td><g:link controller="proceso" action="verComprobante" id="${comp.id}">${comp?.prefijo+""+comp?.numero}</g:link></td>
+                        </g:if>
+                        <g:else>
+                            <td></td>
+                        </g:else>
+                        <td style="text-align: right">${(p.valor+p.impuesto).round(2)}</td>
+                    </tr>
+                </g:each>
+            </g:if>
+            <g:else>
                 <tr>
-                    <td>${p.descripcion}</td>
-                    <td>${p.fecha.format("dd/MM/yyyy")}</td>
-                    <g:set var="comp" value="${cratos.Comprobante.findByProceso(p)}"></g:set>
-                    <g:if test="${comp}">
-                        <td><g:link controller="proceso" action="verComprobante" id="${comp.id}">${comp?.prefijo+""+comp?.numero}</g:link></td>
-                    </g:if>
-                    <g:else>
-                        <td></td>
-                    </g:else>
-                    <td style="text-align: right">${(p.valor+p.impuesto).round(2)}</td>
+                    <td>
+                        NO EXISTE NINGÚN PROCESO ANULADO
+                    </td>
                 </tr>
-            </g:each>
+            </g:else>
             </tbody>
         </table>
     </fieldset>

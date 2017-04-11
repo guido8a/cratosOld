@@ -1,21 +1,23 @@
 <script type="text/javascript" src="${resource(dir: 'js', file: 'ui.js')}"></script>
-<table border="0" class="table table-bordered ">
-    <g:if test="${lista.size()>0}">
-        <thead>
-        <tr>
-            <th>
-                Nombre
-            </th>
-            <th>
-                Descripcion
-            </th>
-            <th>
-                Observaciones
-            </th>
-            <th style="width: 100px"></th>
-        </tr>
-        </thead>
+%{--<table border="0" class="table table-bordered ">--}%
+<table class="table table-bordered table-hover table-condensed">
+
+        %{--<thead>--}%
+        %{--<tr>--}%
+            %{--<th>--}%
+                %{--Nombre--}%
+            %{--</th>--}%
+            %{--<th>--}%
+                %{--Descripcion--}%
+            %{--</th>--}%
+            %{--<th>--}%
+                %{--Observaciones--}%
+            %{--</th>--}%
+            %{--<th style="width: 100px">Acciones</th>--}%
+        %{--</tr>--}%
+        %{--</thead>--}%
         <tbody>
+    <g:if test="${lista.size()>0}">
         <g:each var="gestor" in="${lista}">
             <tr>
                 <td>${gestor.nombre}</td>

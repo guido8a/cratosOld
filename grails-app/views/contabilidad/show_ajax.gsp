@@ -37,7 +37,7 @@
                 Prefijo
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-5">
                 <g:fieldValue bean="${contabilidadInstance}" field="prefijo"/>
             </div>
 
@@ -50,7 +50,7 @@
                 Descripción
             </div>
 
-            <div class="col-md-3">
+            <div class="col-md-5">
                 <g:fieldValue bean="${contabilidadInstance}" field="descripcion"/>
             </div>
 

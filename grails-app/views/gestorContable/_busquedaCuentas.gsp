@@ -1,5 +1,5 @@
 <div id="divPlanCuentasAll" style="width: 100%; min-height: 150px; ">
-    <div style="width: 900px;min-height: 10px; margin-top: 2px;border:none;margin-bottom: 15px; ">
+    <div style="width: 1080px;min-height: 10px; margin-top: 2px;border:none;margin-bottom: 15px; ">
         <div id="agregarCuentas"></div>
     </div>
 </div>
