@@ -11,6 +11,7 @@
         <title><g:layoutTitle default="cratos"/></title>
 
         <!-- Bootstrap core CSS -->
+        %{--<link href="${resource(dir: 'bootstrap-3.0.1/css', file: 'bootstrap.happy1.css')}" rel="stylesheet">--}%
         <link href="${resource(dir: 'bootstrap-3.0.1/css', file: 'bootstrap.happy1.css')}" rel="stylesheet">
 
         <!-- FontAwsome y mFizz: las fuentes con dibujitos para los iconos -->
@@ -67,6 +68,7 @@
 
         <!-- el manager de fechas -->
         <script src="${resource(dir: 'js/plugins', file: 'date.js')}"></script>
+        %{--<script src="${resource(dir: 'js/plugins/homeycombs', file: '/js/jquery.homeycombs.js')}"></script>--}%
 
         <!-- Custom styles -->
         <link href="${resource(dir: 'css', file: 'custom.css')}" rel="stylesheet">
@@ -80,6 +82,7 @@
         <link href="${resource(dir: 'css', file: 'footer.css')}" rel="stylesheet">
         %{--Buscador--}%
         <link href='${resource(dir: 'css', file: 'buscador.css')}' rel='stylesheet'>
+        %{--<link href='${resource(dir: '/js/plugins/homeycombs/css', file: 'homeycombs.css')}' rel='stylesheet'>--}%
 
         <script type="text/javascript">
             var spinner24Url = "${resource(dir:'images/spinners', file:'spinner_24.GIF')}";

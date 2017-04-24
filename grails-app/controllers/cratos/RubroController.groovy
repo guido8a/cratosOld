@@ -33,18 +33,15 @@ class RubroController extends cratos.seguridad.Shield {
     }
 
     def cargaRubros(){
-
         def rubros = Rubro.findAllByTipoRubroAndEmpresa(TipoRubro.get(params.id),session?.empresa,[sort:"descripcion"])
         println("rubros" + rubros)
         [rubros:rubros]
     }
 
 
-
     def create() {
         [rubroInstance: new Rubro(params)]
     }
-
 
     def addRubro(){
         println "params "+params

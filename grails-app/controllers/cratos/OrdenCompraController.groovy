@@ -1,10 +1,15 @@
 package cratos
 
+import org.krysalis.barcode4j.impl.code128.EAN128Bean
 import org.springframework.dao.DataIntegrityViolationException
+import org.krysalis.barcode4j.impl.code39.Code39Bean
+import org.krysalis.barcode4j.*
+
 
 class OrdenCompraController extends cratos.seguridad.Shield {
 
     def ordenCompra
+    def barcode4jService
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -272,4 +277,27 @@ class OrdenCompraController extends cratos.seguridad.Shield {
         }
         render "OK"
     }
+
+    def bar () {
+//        def generator = new Code39Bean()
+        def generator = new EAN128Bean()
+
+        generator.height = 6
+        generator.fontSize = 2
+        def barcodeValue = "09090201601176001321000110012220000000181234567814"
+//        def barcodeValue = "1603201701179174314800120010010000761780007617819"
+
+//        render  barcode4jService.png(generator, barcodeValue)
+        renderBarcodePng(generator, barcodeValue)
+    }
+
+//    def showBarcode(String barcode) {
+//        def generator = new Code39Bean()
+//
+//        generator.height = 6
+//        generator.fontSize = 2
+//        def imageMimeType = "image/png"
+//        render  barcode4jService.png(generator, barcode)
+//
+//    }
 }
